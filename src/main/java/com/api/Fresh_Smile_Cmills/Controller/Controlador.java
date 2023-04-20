@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("CRUDRepo")
+@RequestMapping("FreshSmile")
 public class Controlador {
     @Autowired
     private PacienteServiceIMPL impl;
