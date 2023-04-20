@@ -3,6 +3,7 @@ package com.api.Fresh_Smile_Cmills.Entity;
 import jakarta.persistence.*;
 
 import java.math.BigInteger;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -32,6 +33,9 @@ import java.util.Date;
 
         @Column(name = "contraseña_paciente")
         private String contraseña_paciente;
+
+        @Column(name = "fecha_registro_paciente ")
+        private Timestamp fecha_registro_paciente ;
 
         public int getId_paciente() {
             return id_paciente;
@@ -71,6 +75,14 @@ import java.util.Date;
 
         public void setApellidos_paciente(String apellidos_paciente) {
             this.apellidos_paciente = apellidos_paciente;
+        }
+        public void setFecha_registro_paciente(Timestamp fecha_registro_paciente) {
+            this.fecha_registro_paciente = fecha_registro_paciente;
+        }
+
+        public String getFechaRegistroFormateada() {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+            return dateFormat.format(fecha_registro_paciente);
         }
 
         public String getDireccion_paciente() {

@@ -61,5 +61,5 @@ public class Controlador {
         response.put("pacienteEliminado", pacienteEliminado); // agregar los detalles del paciente eliminado al objeto de respuesta
         return ResponseEntity.ok().body(response);
     }
-    
+
 }
