@@ -2,6 +2,8 @@ package com.api.Fresh_Smile_Cmills.Entity;
 
 import jakarta.persistence.*;
 
+import java.math.BigInteger;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
     @Entity
@@ -15,7 +17,7 @@ import java.util.Date;
         @Column(name = "tipo_documento_paciente")
         private String tipo_documento_paciente;
         @Column(name = "numero_documento_paciente")
-        private int numero_documento_paciente;
+        private BigInteger numero_documento_paciente;
         @Column(name = "nombres_paciente")
         private String nombres_paciente;
         @Column(name = "apellidos_paciente")
@@ -23,16 +25,13 @@ import java.util.Date;
         @Column(name = " direccion_paciente")
         private String  direccion_paciente;
         @Column(name = "telefono_paciente")
-        private int telefono_paciente;
+        private BigInteger telefono_paciente;
 
         @Column(name = "correo_paciente")
         private String correo_paciente;
 
         @Column(name = "contraseña_paciente")
         private String contraseña_paciente;
-
-        @Column(name = "fecha_registro_paciente")
-        private Date fecha_registro_paciente;
 
         public int getId_paciente() {
             return id_paciente;
@@ -50,11 +49,11 @@ import java.util.Date;
             this.tipo_documento_paciente = tipo_documento_paciente;
         }
 
-        public int getNumero_documento_paciente() {
+        public BigInteger getNumero_documento_paciente() {
             return numero_documento_paciente;
         }
 
-        public void setNumero_documento_paciente(int numero_documento_paciente) {
+        public void setNumero_documento_paciente(BigInteger numero_documento_paciente) {
             this.numero_documento_paciente = numero_documento_paciente;
         }
 
@@ -82,11 +81,11 @@ import java.util.Date;
             this.direccion_paciente = direccion_paciente;
         }
 
-        public int getTelefono_paciente() {
+        public BigInteger getTelefono_paciente() {
             return telefono_paciente;
         }
 
-        public void setTelefono_paciente(int telefono_paciente) {
+        public void setTelefono_paciente(BigInteger telefono_paciente) {
             this.telefono_paciente = telefono_paciente;
         }
 
@@ -106,12 +105,5 @@ import java.util.Date;
             this.contraseña_paciente = contraseña_paciente;
         }
 
-        public Date getFecha_registro_paciente() {
-            return fecha_registro_paciente;
-        }
-
-        public void setFecha_registro_paciente(Date fecha_registro_paciente) {
-            this.fecha_registro_paciente = fecha_registro_paciente;
-        }
     }
 
