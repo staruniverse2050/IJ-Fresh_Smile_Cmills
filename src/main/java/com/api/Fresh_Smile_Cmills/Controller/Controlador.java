@@ -15,6 +15,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("CRUDRepo")
 public class Controlador {
+
     @Autowired
     private PacienteServiceIMPL impl;
     @GetMapping
