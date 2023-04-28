@@ -15,11 +15,11 @@ public class Agendamiento {
     @Column(name = "id_agendamiento")
     private int id_agendamiento;
     @Column(name = "total")
-    private BigDecimal total;
+    private String total;
     @Column(name = "hora_cita")
-    private Timestamp hora_cita;
+    private String hora_cita;
     @Column(name = "fecha_cita")
-    private Timestamp fecha_cita;
+    private String fecha_cita;
     @Column(name = "id_paciente1")
     private int id_paciente1;
     @Column(name = " id_administrador1")
@@ -33,27 +33,27 @@ public class Agendamiento {
         this.id_agendamiento = id_agendamiento;
     }
 
-    public BigDecimal getTotal() {
+    public String getTotal() {
         return total;
     }
 
-    public void setTotal(BigDecimal total) {
+    public void setTotal(String total) {
         this.total = total;
     }
 
-    public Timestamp getHora_cita() {
+    public String getHora_cita() {
         return hora_cita;
     }
 
-    public void setHora_cita(Timestamp hora_cita) {
+    public void setHora_cita(String hora_cita) {
         this.hora_cita = hora_cita;
     }
 
-    public Timestamp getFecha_cita() {
+    public String getFecha_cita() {
         return fecha_cita;
     }
 
-    public void setFecha_cita(Timestamp fecha_cita) {
+    public void setFecha_cita(String fecha_cita) {
         this.fecha_cita = fecha_cita;
     }
 

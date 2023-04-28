@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 
 import java.math.BigInteger;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 
 @Entity
 @Table(name = "administrador")
@@ -108,11 +109,12 @@ public class Administrador {
         this.contraseña_uadministrador = contraseña_uadministrador;
     }
 
-    public Timestamp getFecha_registro() {
-        return fecha_registro;
+    public void setFecha_registro_administrador(Timestamp fecha_registro) {
+        this.fecha_registro = fecha_registro;
     }
 
-    public void setFecha_registro(Timestamp fecha_registro) {
-        this.fecha_registro = fecha_registro;
+    public String getFechaRegistro() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        return dateFormat.format(fecha_registro);
     }
 }
