@@ -114,7 +114,7 @@ public class Administrador {
     }
 
     public String getFechaRegistro() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         return dateFormat.format(fecha_registro);
     }
 }
