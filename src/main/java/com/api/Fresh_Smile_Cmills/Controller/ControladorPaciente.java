@@ -8,13 +8,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @RestController
 @RequestMapping("FreshSmile")
-public class Controlador {
+public class ControladorPaciente {
 
     @Autowired
     private PacienteServiceIMPL impl;
@@ -52,15 +53,18 @@ public class Controlador {
         Paciente paciente=this.impl.BuscarPaciente(id);
         return ResponseEntity.ok(paciente);
     }
-    @DeleteMapping
-    @RequestMapping(value = "EliminarPacientes/{id}",method = RequestMethod.DELETE)
-    public ResponseEntity<?>EliminarPacientes(@PathVariable int id){
-        Paciente pacienteEliminado = this.impl.BuscarPaciente(id); // obtener los detalles del paciente
-        this.impl.EliminarPaciente(id); // eliminar el paciente
+    @DeleteMapping("EliminarPacientes/{id}")
+    public ResponseEntity<Map<String, Object>> eliminarPaciente(@PathVariable int id) {
+        Paciente pacienteEliminado = impl.BuscarPaciente(id);
+        impl.EliminarPaciente(id);
+
         Map<String, Object> response = new HashMap<>();
         response.put("message", "Paciente eliminado con éxito");
-        response.put("pacienteEliminado", pacienteEliminado); // agregar los detalles del paciente eliminado al objeto de respuesta
-        return ResponseEntity.ok().body(response);
-    }
+        response.put("pacienteEliminado", pacienteEliminado);
+
+        return ResponseEntity.ok().body(response);    }
+
 
 }
+
+
