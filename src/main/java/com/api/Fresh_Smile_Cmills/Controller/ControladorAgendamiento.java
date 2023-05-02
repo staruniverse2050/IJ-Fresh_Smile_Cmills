@@ -54,7 +54,7 @@ public class ControladorAgendamiento {
         return ResponseEntity.ok(agendamiento);
     }
     @DeleteMapping
-    @RequestMapping(value = "EliminarAgendamiento/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "EliminarAgendamientos/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<?> EliminarAgendamiento(@PathVariable int id) {
         Agendamiento agendamientoEliminado = this.impl.BuscarAgendamiento(id);
         this.impl.EliminarAgendamiento(id);

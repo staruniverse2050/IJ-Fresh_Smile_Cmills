@@ -3,11 +3,12 @@ package com.api.Fresh_Smile_Cmills.Entity;
 import jakarta.persistence.*;
 
 import java.math.BigInteger;
+import java.sql.Date;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDateTime;
 
-    @Entity
+@Entity
     @Table(name = "paciente")
     public class Paciente {
 
@@ -33,11 +34,13 @@ import java.util.Date;
 
         @Column(name = "contraseña_paciente")
         private String contraseña_paciente;
+    @Column(name = "fecha_registro_paciente")
+    private LocalDateTime fecha_registro_paciente;
 
-        @Column(name = "fecha_registro_paciente ")
-        private Timestamp fecha_registro_paciente ;
 
-        public int getId_paciente() {
+
+
+    public int getId_paciente() {
             return id_paciente;
         }
 
@@ -76,14 +79,17 @@ import java.util.Date;
         public void setApellidos_paciente(String apellidos_paciente) {
             this.apellidos_paciente = apellidos_paciente;
         }
-        public void setFecha_registro_paciente(Timestamp fecha_registro_paciente) {
-            this.fecha_registro_paciente = fecha_registro_paciente;
-        }
+    public Paciente() {
+        this.fecha_registro_paciente = LocalDateTime.now();
+    }
 
-        public String getFechaRegistroFormateada() {
-            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-            return dateFormat.format(fecha_registro_paciente);
-        }
+    public void setFecha_registro_administrador(LocalDateTime fecha_registro) {
+        this.fecha_registro_paciente = fecha_registro;
+    }
+
+    public LocalDateTime getFecha_registro_administrador() {
+        return fecha_registro_paciente;
+    }
 
         public String getDireccion_paciente() {
             return direccion_paciente;

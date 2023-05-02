@@ -4,8 +4,10 @@ package com.api.Fresh_Smile_Cmills.Entity;
 import jakarta.persistence.*;
 
 import java.math.BigInteger;
+import java.sql.Date;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "administrador")
@@ -35,7 +37,7 @@ public class Administrador {
     private String contraseña_uadministrador;
 
     @Column(name = "fecha_registro ")
-    private Timestamp fecha_registro ;
+    private LocalDateTime fecha_registro ;
 
     public int getId_uadministrador() {
         return id_uadministrador;
@@ -108,13 +110,16 @@ public class Administrador {
     public void setContraseña_uadministrador(String contraseña_uadministrador) {
         this.contraseña_uadministrador = contraseña_uadministrador;
     }
+    public Administrador() {
+        this.fecha_registro = LocalDateTime.now();
+    }
 
-    public void setFecha_registro_administrador(Timestamp fecha_registro) {
+
+    public void setFecha_registro_administrador(LocalDateTime fecha_registro) {
         this.fecha_registro = fecha_registro;
     }
 
-    public String getFechaRegistro() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-        return dateFormat.format(fecha_registro);
+    public LocalDateTime getFecha_registro_administrador() {
+        return fecha_registro;
     }
 }

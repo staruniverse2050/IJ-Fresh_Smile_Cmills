@@ -4,6 +4,8 @@ package com.api.Fresh_Smile_Cmills.Entity;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
+import java.sql.Date;
+import java.sql.Time;
 import java.sql.Timestamp;
 
 @Entity
@@ -17,9 +19,9 @@ public class Agendamiento {
     @Column(name = "total")
     private String total;
     @Column(name = "hora_cita")
-    private String hora_cita;
+    private Time hora_cita;
     @Column(name = "fecha_cita")
-    private String fecha_cita;
+    private Date fecha_cita;
     @Column(name = "id_paciente1")
     private int id_paciente1;
     @Column(name = " id_administrador1")
@@ -41,19 +43,19 @@ public class Agendamiento {
         this.total = total;
     }
 
-    public String getHora_cita() {
+    public Time getHora_cita() {
         return hora_cita;
     }
 
-    public void setHora_cita(String hora_cita) {
+    public void setHora_cita(Time hora_cita) {
         this.hora_cita = hora_cita;
     }
 
-    public String getFecha_cita() {
+    public Date getFecha_cita() {
         return fecha_cita;
     }
 
-    public void setFecha_cita(String fecha_cita) {
+    public void setFecha_cita(Date fecha_cita) {
         this.fecha_cita = fecha_cita;
     }
 
