@@ -2,6 +2,7 @@ package com.api.Fresh_Smile_Cmills.Controller;
 
 
 import com.api.Fresh_Smile_Cmills.Entity.Paciente;
+import com.api.Fresh_Smile_Cmills.Service.PacienteService;
 import com.api.Fresh_Smile_Cmills.Service.PacienteServiceIMPL.PacienteServiceIMPL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -63,6 +64,13 @@ public class ControladorPaciente {
         response.put("pacienteEliminado", pacienteEliminado);
 
         return ResponseEntity.ok().body(response);    }
+
+    @GetMapping("/pacientesEliminados")
+    public ResponseEntity<List<Paciente>> consultarPacientesEliminados() {
+        List<Paciente> pacientesEliminados = PacienteService.ConsultarPacientesEliminados();
+        return ResponseEntity.ok(pacientesEliminados);
+    }
+
 
 
 }

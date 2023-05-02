@@ -36,4 +36,10 @@ public class PacienteServiceIMPL implements PacienteService {
     public void EliminarPaciente(int id) {
         this.repo.deleteById(id);
     }
+    @Override
+    public List<Paciente> ConsultarPacientesEliminados() {
+        return PacienteRepo.ConsultarPacientesEliminados();
+    }
+
+
 }
