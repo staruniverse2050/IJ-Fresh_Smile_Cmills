@@ -63,4 +63,6 @@ public class ControladorAdministrador {
         response.put("administradorEliminado", administradorEliminado);
         return ResponseEntity.ok().body(response);
     }
+
+
 }

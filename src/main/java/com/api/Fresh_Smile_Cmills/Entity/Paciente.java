@@ -3,9 +3,6 @@ package com.api.Fresh_Smile_Cmills.Entity;
 import jakarta.persistence.*;
 
 import java.math.BigInteger;
-import java.sql.Date;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 
 @Entity
@@ -24,7 +21,7 @@ import java.time.LocalDateTime;
         private String nombres_paciente;
         @Column(name = "apellidos_paciente")
         private String apellidos_paciente;
-        @Column(name = " direccion_paciente")
+        @Column(name = "direccion_paciente")
         private String  direccion_paciente;
         @Column(name = "telefono_paciente")
         private BigInteger telefono_paciente;
@@ -34,9 +31,10 @@ import java.time.LocalDateTime;
 
         @Column(name = "contraseña_paciente")
         private String contraseña_paciente;
-    @Column(name = "fecha_registro_paciente")
-    private LocalDateTime fecha_registro_paciente;
-
+        @Column(name = "fecha_registro_paciente")
+        private LocalDateTime fecha_registro_paciente;
+        @Column(name = "Estado")
+        private boolean Estado;
 
 
 
@@ -81,6 +79,7 @@ import java.time.LocalDateTime;
         }
     public Paciente() {
         this.fecha_registro_paciente = LocalDateTime.now();
+        this.Estado = true;
     }
 
     public void setFecha_registro_administrador(LocalDateTime fecha_registro) {
@@ -122,6 +121,16 @@ import java.time.LocalDateTime;
         public void setContraseña_paciente(String contraseña_paciente) {
             this.contraseña_paciente = contraseña_paciente;
         }
-
+    public String getEstado() {
+        if (Estado) {
+            return "Activo";
+        } else {
+            return "Desactivo";
+        }
     }
+
+    public void setEstado(boolean Estado) {
+        this.Estado = Estado;
+    }
+}
 

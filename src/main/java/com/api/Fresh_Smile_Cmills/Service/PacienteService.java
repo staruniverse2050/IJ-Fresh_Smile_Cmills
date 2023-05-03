@@ -9,8 +9,4 @@ public interface PacienteService {
     public Paciente BuscarPaciente(int id);
     public void EliminarPaciente(int id);
 
-    static List<Paciente> ConsultarPacientesEliminados() {
-        return null;
-    }
-
 }
