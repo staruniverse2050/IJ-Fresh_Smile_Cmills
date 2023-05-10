@@ -3,6 +3,8 @@ package com.api.Fresh_Smile_Cmills.Service.AdministradorServiceIMPL;
 import com.api.Fresh_Smile_Cmills.Entity.Administrador;
 import com.api.Fresh_Smile_Cmills.Repository.AdministradorRepo;
 import com.api.Fresh_Smile_Cmills.Service.AdministradorService;
+import jakarta.persistence.EntityManager;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,5 +39,11 @@ private AdministradorRepo repo;
     @Override
     public void EliminarAdministrador(int id) {
         this.repo.deleteById(id);
+    }
+    @Autowired
+    private EntityManager entityManager;
+    @Transactional
+    public void actualizarEstadoAdministrador(Administrador paciente) {
+        entityManager.merge(paciente);
     }
 }

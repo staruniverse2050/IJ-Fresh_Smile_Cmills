@@ -71,7 +71,7 @@ public class ControladorPaciente {
         }
         if (!paciente.getEstado().equalsIgnoreCase("Activo")) {
             Map<String, Object> response = new HashMap<>();
-            response.put("message", "Este paciente se encuentra desactivado");
+            response.put("message", "Este paciente se encuentra innactivo");
             return ResponseEntity.ok(response);
         }
         return ResponseEntity.ok(paciente);

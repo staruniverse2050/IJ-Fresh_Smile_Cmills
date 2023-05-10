@@ -35,6 +35,8 @@ public class Administrador {
 
     @Column(name = "contraseña_uadministrador")
     private String contraseña_uadministrador;
+    @Column(name = "Estado")
+    private boolean Estado;
 
     @Column(name = "fecha_registro ")
     private LocalDateTime fecha_registro ;
@@ -112,6 +114,7 @@ public class Administrador {
     }
     public Administrador() {
         this.fecha_registro = LocalDateTime.now();
+        this.Estado = true;
     }
 
 
@@ -121,5 +124,17 @@ public class Administrador {
 
     public LocalDateTime getFecha_registro_administrador() {
         return fecha_registro;
+    }
+
+    public String getEstado() {
+        if (Estado) {
+            return "Activo";
+        } else {
+            return "Desactivo";
+        }
+    }
+
+    public void setEstado(boolean Estado) {
+        this.Estado = Estado;
     }
 }
